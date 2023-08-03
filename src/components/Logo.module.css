@@ -1,0 +1,16 @@
+.logo {
+    font-size: 1em;
+    line-height: 1.1;
+    width: 10em;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+/* Use this style for all child elements except the first one */
+.description {
+    font-family: "Kaushan Script";
+    font-size: 0.85em;
+}
