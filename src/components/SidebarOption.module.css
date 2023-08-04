@@ -1,0 +1,22 @@
+.option {
+    width: 100%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-primary);
+    padding: 3em 1.5em;
+    margin-bottom: 2em;
+    border-radius: 0.7em;
+}
+
+.title {
+    font-size: 1.1em;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.option * + * {
+    margin-top: 1.2em;
+}

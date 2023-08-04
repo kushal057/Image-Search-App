@@ -1,0 +1,15 @@
+.item {
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+    display: block;
+    background: var(--bg-light-plus);
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 0.35em;
+    font-weight: 400;
+}
+
+.item:hover {
+    background: var(--bg-light)
+}

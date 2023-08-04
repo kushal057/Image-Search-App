@@ -4,8 +4,8 @@
 :root {
   --bg-dark: #3b7290;
   --bg-primary: #4981a0;
-  --bg-light: #b6d4e5;
-  --bg-light-plus: rgba(87,145,179,10);
+  --bg-light: #E8E9EA;
+  --bg-light-plus: #b6d4e5;
 }
 
 * {

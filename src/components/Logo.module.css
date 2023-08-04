@@ -1,7 +1,8 @@
 .logo {
     font-size: 1em;
     line-height: 1.1;
-    width: 10em;
+    width: 100%;
+    margin-bottom: 3em;
 }
 
 .title {
