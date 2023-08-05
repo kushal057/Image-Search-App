@@ -1,0 +1,17 @@
+.app {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.mainContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-size: calc(0.8vw + 0.2rem);
+    height: 100%;
+    background: var(--bg-light);
+    padding: 2em 8em;
+}
