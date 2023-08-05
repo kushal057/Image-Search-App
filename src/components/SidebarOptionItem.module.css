@@ -5,7 +5,7 @@
     display: block;
     background: var(--bg-light-plus);
     text-align: center;
-    padding: 1em 0;
+    padding: 1em 3em;
     border-radius: 0.35em;
     font-weight: 400;
 }
