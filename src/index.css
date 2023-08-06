@@ -7,6 +7,7 @@
   --bg-light: #E8E9EA;
   --bg-light-plus: #b6d4e5;
   --placeholder-text: #7a7a7a;
+  font-size: calc(0.7vw + 0.3em);
 }
 
 * {

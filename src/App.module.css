@@ -10,7 +10,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    font-size: calc(0.8vw + 0.2rem);
+    font-size: 1em;
     height: 100%;
     background: var(--bg-light);
     padding: 2em 8em;
