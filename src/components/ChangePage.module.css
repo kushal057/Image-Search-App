@@ -1,0 +1,18 @@
+.changePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.changePage * + *{
+    margin-left: 0.8em;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
