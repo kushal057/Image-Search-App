@@ -1,13 +1,20 @@
 import styles from "./ImageBox.module.css"
 import download_icon from "../assets/icons/download_icon.svg"
+import {Link} from 'react-router-dom'
+import {saveAs} from 'file-saver'
 
 export default function ImageBox ({text, src}) {
+    const downloadImage = (e) => {
+        e.preventDefault();
+        saveAs(src, 'image.jpg');
+    };
+
     return (
         <div className={styles.imageBox}>
-            <div className={styles.image} style={{background: `url(https://images.unsplash.com/photo-1690722410513-ff89e9ceb825?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80})`}}></div>
+            <div className={styles.image}><img src={src} alt={text}/></div>
             <div className={styles.options}>
-                <span className={styles.text}>{text}</span>
-                <img src={download_icon} alt={text}/>
+                <Link to={src} target="_blank" className={styles.text}>Open Image in New Tab</Link>
+                <button onClick={downloadImage} className={styles.downloadBtn}><img src={download_icon} alt={text}/></button>
             </div>
         </div>
     )
