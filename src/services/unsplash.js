@@ -6,7 +6,8 @@ export default async function searchImage(keyword, resolution = '') {
   
   let url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&client_id=${apiKey}&per_page=${imagesPerRequest}`;
   if(resolution !== '') {
-    url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&client_id=${apiKey}&per_page=${imagesPerRequest}&content_filter=${resolution}`;
+  
+    url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)} ${resolution}_res&client_id=${apiKey}&per_page=${imagesPerRequest}`;
     console.log("resolution", resolution);
   }
 
