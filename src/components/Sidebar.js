@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import SidebarOption from "./SidebarOption"
 
 export default function Sidebar() {
-    const sortOptions = [{title: "High Quality", link: "#"}, {title: "Low Quality", link: "#"}]
+    const sortOptions = [{id: 1, title: "High Quality", link: "#"}, {id: 2, title: "Low Quality", link: "#"}]
 
     return(
         <div className={styles.sidebar}>
