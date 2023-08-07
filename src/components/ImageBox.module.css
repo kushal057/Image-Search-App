@@ -33,6 +33,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 3px solid var(--bg-dark);
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
