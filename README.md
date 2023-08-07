@@ -1,3 +1,6 @@
+# Project details
+This project is intended only for personal use and not for commercial distribution.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
