@@ -2,10 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5em;
 }
 
 .changePage * + *{
-    margin-left: 0.8em;
+    margin-left: 1em;
+}
+
+.changePage p {
+    color: var(--bg-dark);
 }
 
 button {

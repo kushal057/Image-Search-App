@@ -3,7 +3,12 @@ import axios from 'axios';
 export default async function searchImage(keyword, resolution = '') {
   const apiKey = process.env.REACT_APP_UNSPLASH_API_KEY;
   const imagesPerRequest = 30; // Number of images fetched in a single request or api call
-  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&client_id=${apiKey}&per_page=${imagesPerRequest}`;
+  
+  let url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&client_id=${apiKey}&per_page=${imagesPerRequest}`;
+  if(resolution !== '') {
+    url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&client_id=${apiKey}&per_page=${imagesPerRequest}&content_filter=${resolution}`;
+    console.log("resolution", resolution);
+  }
 
   try {
     const response = await axios.get(url);

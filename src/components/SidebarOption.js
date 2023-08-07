@@ -1,11 +1,12 @@
 import styles from "./SidebarOption.module.css"
 import SidebarOptionItem from "./SidebarOptionItem.js"
 
-export default function SidebarOption({title, options}) {
+export default function SidebarOption({title, handleResolution}) {
     return(
         <div className={styles.option}>
             <p className={styles.title}>{title}</p>
-            {options.map(item => <SidebarOptionItem key={item.id} title={item.title} link={item.link}/>)}
+            <SidebarOptionItem title="High Quality" handleResolution={handleResolution}/>
+            <SidebarOptionItem title="Low Quality" handleResolution={handleResolution}/>
         </div>
     )
 }

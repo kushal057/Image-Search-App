@@ -1,7 +1,7 @@
 import styles from "./SidebarOptionItem.module.css"
 
-export default function SidebarOptionItem({title, link}) {
+export default function SidebarOptionItem({title, handleResolution}) {
     return (
-        <a className={styles.item} href={link}>{title}</a>
+        <button onClick={handleResolution} className={styles.item}>{title}</button>
     )
 }

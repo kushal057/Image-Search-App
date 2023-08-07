@@ -13,6 +13,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1); // Keep track of the current page to display specific number of images
   const [images, setImages] = useState([]); // Store images that are fetched
   const [reloadImages, setReloadImages] = useState(false); // Flag to fetch images again
+  const [resolution, setResolution] = useState("");
   const imagesPerPage = 4;
   const totalPage = Math.floor(images.length / imagesPerPage);
 
@@ -26,17 +27,20 @@ function App() {
       setCurrentPage(currentPage - 1)
     }
   }
-
   const handleNextPage = (e) => { // Function to navigate to the next page 
     if(currentPage < totalPage) {
       setCurrentPage(currentPage + 1)
     }
   }
-
+  const handleResolution = (e) => {
+    const resolution = e.target.textContent.split(" ")[0].toLowerCase(); //Set the resolution value for the api call
+    setResolution(resolution);
+    console.log("resolution app js", resolution)
+  }
 
   useEffect(() => {
     const fetchImages = async () => {
-      const allImages = searchInput ? await searchImage(searchInput) : await searchImage("Nature") ;
+      const allImages = await searchImage(searchInput, resolution);
       console.log("🚀 ~ file: App.js:24 ~ fetchImages ~ allImages:", allImages)
       let id = 1;
       const mappedImages = allImages.map(item => {
@@ -48,7 +52,7 @@ function App() {
     setCurrentPage(1);
     fetchImages();
     setReloadImages(false);
-  }, [reloadImages])
+  }, [reloadImages, resolution])
 
   // Calculate the index range for images in the current page
   const startIndex = (currentPage - 1) * imagesPerPage;
@@ -56,7 +60,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Sidebar />
+      <Sidebar handleResolution={handleResolution}/>
       <div className={styles.mainContent}>
         <SearchBar searchInput={searchInput} handleSearchInput={handleSearchInput} handleReloadImages={handleReloadImages}/>
         <div className={styles.imageBoxContainer}>
