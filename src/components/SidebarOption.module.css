@@ -2,7 +2,6 @@
     font-size: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background: var(--bg-primary);
     padding: 3em 1.5em;
     margin-bottom: 2em;
@@ -15,9 +14,17 @@
     margin-bottom: 0.3em;
     font-weight: 400;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .option * + * {
     margin-top: 1.2em;
 }
+
+@media screen and (max-width: 700px) {
+    .option {
+        display: none;
+    }
+}
+
+

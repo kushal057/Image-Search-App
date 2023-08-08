@@ -17,3 +17,10 @@
     font-size: 0.9em;
     text-align: right;
 }
+
+@media screen and (max-width: 700px) {
+    .logo {
+        align-self: auto;
+        margin-bottom: 0.5em;
+    }
+}

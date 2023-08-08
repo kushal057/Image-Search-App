@@ -13,8 +13,9 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1); // Keep track of the current page to display specific number of images
   const [images, setImages] = useState([]); // Store images that are fetched
   const [reloadImages, setReloadImages] = useState(false); // Flag to fetch images again
-  const [resolution, setResolution] = useState("");
-  const imagesPerPage = 4;
+  const [resolution, setResolution] = useState(""); // Set the resolution of the images to be fetched
+  const [imagesPerPage, setImagesPerPage] = useState(4)
+  
   const totalPage = Math.floor(images.length / imagesPerPage);
 
   const handleSearchInput = (e) => {setSearchInput(e.target.value)} // Function to handle the input in the Search bar
@@ -53,6 +54,27 @@ function App() {
     fetchImages();
     setReloadImages(false);
   }, [reloadImages, resolution])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 700) {
+        setImagesPerPage(2);
+      } else {
+        setImagesPerPage(4);
+      }
+    };
+  
+    // Call the handleResize function initially to set the correct imagesPerPage value on component mount
+    handleResize();
+  
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      // Cleanup function to remove the event listener when the component unmounts
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
 
   // Calculate the index range for images in the current page
   const startIndex = (currentPage - 1) * imagesPerPage;

@@ -62,3 +62,10 @@
     /* convert var(--placeholder-text) color value to change the color of the svg icon*/
     filter: invert(39%) sepia(46%) saturate(537%) hue-rotate(157deg) brightness(91%) contrast(86%);
 }
+
+@media screen and (max-width: 700px) {
+    .imageBox {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+}

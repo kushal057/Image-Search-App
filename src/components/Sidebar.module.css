@@ -8,3 +8,9 @@
     color: white;
     background: var(--bg-dark);
 }
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        padding: 1em 0;
+    }
+}
