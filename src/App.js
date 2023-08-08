@@ -14,7 +14,7 @@ function App() {
   const [images, setImages] = useState([]); // Store images that are fetched
   const [reloadImages, setReloadImages] = useState(false); // Flag to fetch images again
   const [resolution, setResolution] = useState(""); // Set the resolution of the images to be fetched
-  const [imagesPerPage, setImagesPerPage] = useState(4)
+  const [imagesPerPage, setImagesPerPage] = useState(4) // Set images to be displayed per page
   
   const totalPage = Math.floor(images.length / imagesPerPage);
 
@@ -64,13 +64,14 @@ function App() {
       }
     };
   
-    // Call the handleResize function initially to set the correct imagesPerPage value on component mount
+    // Call the handleResize function initially to set the correct imagesPerPage value on component mounts
+    // though this is not required in our case because we have set it to correct value upon the state variable initialization
     handleResize();
   
     window.addEventListener('resize', handleResize);
   
     return () => {
-      // Cleanup function to remove the event listener when the component unmounts
+      // Cleanup function to remove the event listener when the component unmounts because the event listener is attached to window object
       window.removeEventListener('resize', handleResize);
     };
   }, []);
