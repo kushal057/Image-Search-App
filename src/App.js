@@ -33,8 +33,8 @@ function App() {
       setCurrentPage(currentPage + 1)
     }
   }
-  const handleResolution = (e) => {
-    const resolution = e.target.textContent.split(" ")[0].toLowerCase(); //Set the resolution value for the api call
+  const handleResolution = (e) => { //Set the resolution value for the api call
+    const resolution = e.target.textContent.split(" ")[0].toLowerCase(); 
     setResolution(resolution);
     console.log("resolution app js", resolution)
   }
